@@ -35,7 +35,7 @@ body {
 
 .button {
     display: block;
-    
+    width: 275;
     margin: 20px auto;
     padding: 15px;
     border-radius: 15px;
