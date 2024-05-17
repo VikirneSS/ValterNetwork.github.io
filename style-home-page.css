@@ -18,6 +18,12 @@ body {
     margin-bottom: 50px;
 }
 
+@media screen and (max-width: 600px) {
+    .title {
+        font-size: 50pt;
+    }
+}
+
 .panel {
     background-color: white;
     padding: 50px;
@@ -29,7 +35,7 @@ body {
 
 .button {
     display: block;
-    width: 80%;
+    
     margin: 20px auto;
     padding: 15px;
     border-radius: 15px;
@@ -57,7 +63,7 @@ body {
 .chat-button {
     background-color: #003EFF;
     color: white;
-    border: 1px solid white;
+    border: 1px solid #003EFF;
 }
 
 .register-button {
@@ -93,12 +99,14 @@ body {
         background-color: #003EFF;
         padding: 5px;
         border-radius: 5px;
+        text-align: center;
+        display: block;
     }
 
         .footer a:hover {
             text-decoration: underline;
         }
-
+    
 .settings-panel {
     background-color: white;
     padding: 20px;
@@ -123,7 +131,7 @@ body {
     }
 
     .settings-panel input[type="text"] {
-        width: 90%;
+        width: 278px;
         margin-bottom: 10px;
         padding: 10px;
         border-radius: 10px;
@@ -145,6 +153,22 @@ body {
             cursor: not-allowed;
             opacity: 0.5;
         }
+
+    .settings-panel.slide-down {
+        animation: slideDown 0.5s ease-in-out forwards;
+    }
+    
+@keyframes slideDown {
+    0% {
+        top: 0;
+        opacity: 0;
+    }
+
+    100% {
+        top: 50%;
+        opacity: 1;
+    }
+}
 
 .overlay {
     position: fixed;
