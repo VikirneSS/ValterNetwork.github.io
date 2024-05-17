@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valter Network</title>
+    <link rel="stylesheet" href="style-home-page.css">
+</head>
+<body>
+    <div>
+        <h1 class="title">Valter Network</h1>
+        <div class="panel">
+            <a href="#" class="button chat-button">Войти в чат</a>
+            <a href="#" class="button register-button">Регистрация</a>
+            <a href="#" class="button login-button">Вход</a>
+        </div>
+    </div>
+    <div class="footer">
+        <p>Версия: 1.12.2 (22807)</p>
+
+        <a href="#" id="configuration-link">Конфигурация</a>
+
+        <div class="overlay" id="overlay"></div>
+
+        <div class="settings-panel" id="settings-panel">
+            <h2>Настройки <br>к подключению<br></h2>
+            <input type="text" id="nickname" placeholder="Введите никнейм">
+            <input type="text" id="hex-color" placeholder="HEX color code">
+            <div class="color-panel" id="color-panel"></div>
+            <div>
+                <script>
+                    var hexColorInput = document.getElementById('hex-color');
+                    var colorPanel = document.getElementById('color-panel');
+
+                    hexColorInput.addEventListener('input', function () {
+                        var color = this.value;
+                        if (/^#[0-9A-F]{6}$/i.test(color)) {
+                            colorPanel.style.backgroundColor = color;
+                        } else {
+                            colorPanel.style.backgroundColor = 'red';
+                        }
+                    });
+                </script>
+            </div>
+            <div>&nbsp;</div>
+            <div>&nbsp;</div>
+            <div>&nbsp;</div>
+            <div>&nbsp;</div>
+            <div>&nbsp;</div>
+            <div>&nbsp;</div>
+            <div id="outer">
+                <div class="inner"><button id="save-button" class="button-small" disabled>Сохранить</button></div>
+                <div class="inner"><button id="cancel-button" class="button-small">Отмена</button></div>
+            </div>
+        </div>
+
+        <script>
+            document.getElementById('configuration-link').addEventListener('click', function (event) {
+                event.preventDefault();
+                document.getElementById('settings-panel').style.display = 'block';
+                document.getElementById('overlay').style.display = 'block';
+            });
+
+            document.getElementById('nickname').addEventListener('input', function () {
+                if (this.value.trim() !== '' && this.value.trim() !== '') {
+                    document.getElementById('save-button').disabled = false;
+                } else {
+                    document.getElementById('save-button').disabled = true;
+                }
+            });
+
+            document.getElementById('cancel-button').addEventListener('click', function () {
+                closeSettingsPanel();
+            });
+
+            document.getElementById('save-button').addEventListener('click', function () {
+                alert('Настройки сохранены');
+                closeSettingsPanel();
+            });
+
+            document.getElementById('overlay').addEventListener('click', function () {
+                closeSettingsPanel();
+            });
+
+            function closeSettingsPanel() {
+                document.getElementById('settings-panel').style.display = 'none';
+                document.getElementById('overlay').style.display = 'none';
+            }
+        </script>
+    </div>
+</body>
+</html>
