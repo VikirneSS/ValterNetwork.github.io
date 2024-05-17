@@ -28,33 +28,29 @@
             <input type="text" id="hex-color" placeholder="HEX color code">
             <div class="color-panel" id="color-panel"></div>
             <div>
-                <script>
-                    var hexColorInput = document.getElementById('hex-color');
-                    var colorPanel = document.getElementById('color-panel');
-
-                    hexColorInput.addEventListener('input', function () {
-                        var color = this.value;
-                        if (/^#[0-9A-F]{6}$/i.test(color)) {
-                            colorPanel.style.backgroundColor = color;
-                        } else {
-                            colorPanel.style.backgroundColor = 'red';
-                        }
-                    });
-                </script>
+                <script src="Scripts/script-set-color-panel.js"></script>
+            </div>
+            <div>             
+                <img src="" id="rounded-image" />
             </div>
             <div>&nbsp;</div>
-            <div>&nbsp;</div>
-            <div>&nbsp;</div>
-            <div>&nbsp;</div>
+            <div>
+                <label for="upload-image" class="button-choise">
+                    Выберите файл
+                </label>
+                <input type="file" id="upload-image" accept="image/*" style="display: none;">
+            </div>
             <div>&nbsp;</div>
             <div>&nbsp;</div>
             <div id="outer">
                 <div class="inner"><button id="save-button" class="button-small" disabled>Сохранить</button></div>
                 <div class="inner"><button id="cancel-button" class="button-small">Отмена</button></div>
             </div>
+            <script src="Scripts/script-set-img.js"></script>
         </div>
-        <script src="script-setting-panel.js"></script>
-        <script src="script-enabled-button.js"></script>
+
+        <script src="Scripts/script-animation-settpanel.js"></script>
+        <script src="Scripts/script-enabled-button.js"></script>
     </div>
 </body>
 </html>
