@@ -18,9 +18,9 @@ body {
     margin-bottom: 50px;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 800px) {
     .title {
-        font-size: 50pt;
+        font-size: 40pt;
     }
 }
 
@@ -35,7 +35,7 @@ body {
 
 .button {
     display: block;
-    width: 400px;
+    width: 50vh;
     margin: 40px auto;
     padding: 15px;
     border-radius: 15px;
