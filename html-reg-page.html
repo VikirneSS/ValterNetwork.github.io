@@ -17,6 +17,24 @@
         </div>
         <script src="script-to-page.js"></script>
         <script src="script-disabled-button.js"></script>
+        
+        <script>
+    window.onload = function () {
+        var inputField = document.getElementById('input-discord');
+        var button = document.getElementById('continue-button');
+
+        function updateButtonWidth() {
+            button.style.width = inputField.offsetWidth + 'px';
+        }
+
+        inputField.addEventListener('input', updateButtonWidth);
+
+        window.addEventListener('resize', updateButtonWidth);
+
+        updateButtonWidth();
+    };
+</script>
+        
     </div>
 </body>
 </html>
